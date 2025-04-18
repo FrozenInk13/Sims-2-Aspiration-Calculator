@@ -11,76 +11,116 @@ In case you're curious about what calculations are actually taking place, then l
 ~
 
    ~ Parents ~
+   
 If the Sim has a good relationship (friends or better) with their first parent, (Mother or some equivilent) then:
-+2 Points toward the Aspiration that matches that parent's Primary Aspiration
-+1 Points toward the Aspiration that matches that parent's Secondary Aspiration
+(+ 2) Points toward the Aspiration that matches that parent's Primary Aspiration
+(+ 1) Points toward the Aspiration that matches that parent's Secondary Aspiration
 
 Same thing as above but for their second parent. (Father or some equivilent)
 
 Do note that when I say "parent", not only do I mean it in a gender-neutral context, but I also don't mean "birth parent". The "parent" being referred to here are that Sim's parents of choice, not their biological parent. So for example, if a child is the result of a Woohoo between Sim A and Sim B, but Sim A and Sim C are the ones to raise them, then that child will use Sim A and Sim C for this calculation, completely ignoring Sim B's existence even if they have a good relationship with them. Think of the "Parents" calculation category as the new-Teen looking to potentially aspire to be similar people to the ones they are closest to upon becoming a Teen rather than people they might not even know exist.
 
    ~ Personality ~
+   
 For each Personality Row, perform the following calculation:
    1. If the number of points the Sim has in that Personality Row is less than 5, then take the absolute value of the number of points in that row subtracted by 5. In other words, you are finding the distance between 5 and the number of points your Sim has in that row.
    2. If the number of points the Sim has in that Personality Row is greater than 5, then you just subtract it by 5.
    3. If the number of points the Sim has in that Personality Row is equal to 5, then you skip that Personality Row and move to the next one. If that's the last Personality Row, (typically will be Grouchy/Nice) then you move on to the next section for calculation.
 
 After that, then look at which side of each Personality Row your points lean on and add points associated with that. For the following, let the calculated points (or calc_points) be the number of points calculated from the above section for each respective Personality Row. Also let ceil(calc_points / 2) mean to take the calculated points, divide it by two, then take the ceiling of that value. (round to the next-highest whole number)
+
 ~ Sloppy: + calc_points Pleasure, + ceil(calc_points / 2) Romance
+
 ~ Neat: + calc_points Family, + ceil(calc_points / 2) Knowledge
 
+
 ~ Shy: + calc_points Knowledge, + ceil(calc_points / 2) Pleasure
+
 ~ Outgoing: + calc_points Popularity, + ceil(calc_points / 2) Fortune
 
+
 ~ Lazy: + calc_points Pleasure, ceil(calc_points / 2) Knowledge
+
 ~ Active: + calc_points Family, ceil(calc_points / 2) Popularity
 
+
 ~ Serious: + calc_points Fortune, + ceil(calc_points / 2) Popularity
+
 ~ Playful: + calc_points Romance, + ceil(calc_points / 2) Family
 
+
 ~ Grouchy: + calc_points Knowledge, + ceil(calc_points / 2) Fortune
+
 ~ Nice: + calc_points Popularity, + ceil(calc_points / 2) Romance
 
+
 If you want them without the calculations, then here's the simple table:
+
 ~ Sloppy: Pleasure, Romance
+
 ~ Neat: Family, Knowledge
 
+
 ~ Shy: Knowledge, Pleasure
+
 ~ Outgoing: Popularity, Fortune
 
+
 ~ Lazy: Pleasure, Knowledge
+
 ~ Active: Family, Popularity
 
+
 ~ Serious: Fortune, Popularity
+
 ~ Playful: Romance, Family
 
+
 ~ Grouchy: Knowledge, Fortune
+
 ~ Nice: Popularity, Romance
 
+
    ~ Zodiac ~
-+ 2 Points to the Aspiration that matches the Zodiac Sign the Sim has.
+
+(+ 2) Points to the Aspiration that matches the Zodiac Sign the Sim has.
 
 I just copy and pasted the list of Zodiacs from somewhere. I can't for the life of you tell you where I got it from or why specific Zodiac Signs get assigned to specific Aspirations, but I do have the list below if you're curious.
+
 ~ Family: Aquarius & Cancer
+
 ~ Fortune: Sagittarius & Scorpio
+
 ~ Knowledge: Pisces & Taurus
+
 ~ Pleasure: Capricorn & Taurus
+
 ~ Popularity: Gemini & Leo
+
 ~ Romance: Aries & Libra
 
+
    ~ Interests ~
+
 For the Interests which are the highest, second highest, and lowest ranked Interests on that Sim, points are either added or subtracted from their matching Aspiration. Specifically, they are scored as shown below:
-+ 3 Points for the matching Aspiration of the highest-ranked Interest
-+ 2 Points for the matching Aspiration of the second highest-ranked Interest
-- 2 Points for the matching Aspiration of the lowest-ranked Interest
+(+ 3) Points for the matching Aspiration of the highest-ranked Interest
+(+ 2) Points for the matching Aspiration of the second highest-ranked Interest
+(- 2) Points for the matching Aspiration of the lowest-ranked Interest
 
 As for the Aspirations which match each Interest, I have a custom list for that too, which is shown below:
+
 ~ Family: Environment, Health, Toys
+
 ~ Fortune: Crime, Money, Work
+
 ~ Knowledge: Paranormal, School, Sci-fi
+
 ~ Pleasure: Animals, Entertainment, Food
+
 ~ Popularity: Politics, Sports, Travel
+
 ~ Romance: Culture, Fashion, Weather
+
 
 ~~ ~~
 
@@ -89,43 +129,77 @@ As for the Jealousy calculations, that's a bit more complex than you might think
 So, what does it do? First of all, it generates a random number between 0 and 19. It then checks to see what Primary and Secondary Aspirations have been calculated before matching them with a set of results, finding the Jealousy Level from that. In case you're curious of all the possibilities, then that is shown below. Do remember that the Jealousy Levels is still completely random.
 
 ~ Primary: Romance, Secondary: Family
+
 45% - No Jealousy / Polyamorous
+
 25% - Married Only
+
 20% - Engaged / Steady
+
 10% - In Love
 
+
 ~ Primary: Romance, Secondary: NOT Family
+
 60% - No Jealousy / Polyamorous
+
 25% - Married Only
+
 10% - Engaged / Steady
+
 5% - In Love
 
+
 ~ Primary: Family, Secondary: Romance
+
 10% - No Jealousy / Polyamorous
+
 20% - Married Only
+
 45% - Engaged / Steady
+
 25% - In Love
+
 
 ~ Primary: Family, Secondary: NOT Romance
+
 5% - No Jealousy / Polyamorous
+
 10% - Married Only
+
 55% - Engaged / Steady
+
 30% - In Love
 
+
 ~ Primary: NOT Family or Romance, Secondary: Romance
+
 25% - No Jealousy / Polyamorous
+
 30% - Married Only
+
 30% - Engaged / Steady
+
 15% - In Love
 
+
 ~ Primary: NOT Family or Romance, Secondary: Family
+
 10% - No Jealousy / Polyamorous
+
 15% - Married Only
+
 50% - Engaged / Steady
+
 25% - In Love
 
+
 ~ Primary: NOT Family or Romance, Secondary: NOT Family or Romance
+
 10% - No Jealousy / Polyamorous
+
 30% - Married Only
+
 40% - Engaged / Steady
+
 20% - In Love
