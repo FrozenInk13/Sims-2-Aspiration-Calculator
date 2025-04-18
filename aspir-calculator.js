@@ -327,21 +327,21 @@ function jealousy(primary, secondary) {
     if ((primary == ("Romance" || "Family")) || (secondary == ("Romance" || "Family"))) {
         if (primary == "Romance") {
             if (secondary == "Family") {
-                if (jealousy > 7) {
-                    jeal_lvl = "No Jealousy / Polyamorous";
-                } else if (jealousy > 2) {
-                    jeal_lvl = "Married Only";
-                } else if (jealousy > 0) {
-                    jeal_lvl = "Engaged / Steady";
-                } else {
-                    jeal_lvl = "In Love";
-                }
-            } else {
                 if (jealousy > 10) {
                     jeal_lvl = "No Jealousy / Polyamorous";
                 } else if (jealousy > 5) {
                     jeal_lvl = "Married Only";
                 } else if (jealousy > 1) {
+                    jeal_lvl = "Engaged / Steady";
+                } else {
+                    jeal_lvl = "In Love";
+                }
+            } else {
+                if (jealousy > 7) {
+                    jeal_lvl = "No Jealousy / Polyamorous";
+                } else if (jealousy > 2) {
+                    jeal_lvl = "Married Only";
+                } else if (jealousy > 0) {
                     jeal_lvl = "Engaged / Steady";
                 } else {
                     jeal_lvl = "In Love";
