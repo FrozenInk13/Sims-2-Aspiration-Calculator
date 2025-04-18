@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sims 2 Aspiration Calculator</title>
+        <link rel="stylesheet" href="aspircalc_styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Sims 2 Aspiration Calculator</h1>
+        <p id="intro">
+            Welcome to my Sims 2 Aspiration Calculator! If you want to calculate a Sim's Aspiration, Secondary Aspiration, and Jealousy Level for when you're playing the Sims 2, then feel free to use this site to help determine that! The calculation takes the Sim's parent's Aspirations, (both primary and secondary) the Sims's personality, the Sim's interests, and the Sim's zodiac sign into consideration. While the Primary and Secondary Aspirations will remain constant no matter how many times you calculate it, the Jealousy Level will be random while taking into account the Primary and Secondary Aspiration your Sim would get. Feel free to ignore the Jealousy Levels if you wish to not play with them.
+        </p>
+        <p id="intro">
+            To use this calculator, just input your Sim's data into every spot below. The calculator might give an inaccurate result if you don't ensure every category visible to you is filled out properly, so if you care about that then make sure you went through every option before hitting the "calculate" button at the bottom. Your results will show up below the "calculate" and "reset" buttons, so if you don't see them after pressing it you might need to scroll a bit first. Pressing the "reset" button will restore everything to how it was when you first entered the page. I hope you have fun using this tool!
+        </p>
+
+        <div class="container">
+            <div class="calculator-section">
+                <h2>Please input all relevant information about your Sim.</h2>
+                <div class="input-area">
+                    <p>Did your Sim have a good relationship with their first parent? (Mother or some equivilent)
+                        <select name="parent1" id="parent1" size="1" required>
+                            <option id="Yes" value="Yes" selected="selected">Yes</option>
+                            <option id="No">No</option>
+                        </select>
+                    </p>
+                        <div id="family-aspir1" value="family-aspir1">
+                            <p class="family-para">Parent 1's Primary Aspiration
+                                <select id="primary1" size="1">
+                                    <option value="Family">Family</option>
+                                    <option value="Fortune">Fortune</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Pleasure">Pleasure</option>
+                                    <option value="Popularity">Popularity</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Grilled Cheese">Grilled Cheese</option>
+                                </select>
+                            </p>
+                            <p class="family-para">Parent 1's Secondary Aspiration
+                                <select id="secondary1" size="1">
+                                    <option value="Family">Family</option>
+                                    <option value="Fortune" selected="selected">Fortune</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Pleasure">Pleasure</option>
+                                    <option value="Popularity">Popularity</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Grilled Cheese">Grilled Cheese</option>
+                                </select>
+                            </p>
+                        </div>
+                    <p>Did your Sim have a good relationship with their second parent? (Father or some equivilent)
+                        <select name="parent2" id="parent2" size="1" required>
+                            <option value="Yes" selected="selected">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <div id="family-aspir2" value="family-aspir2">
+                            <p>Parent 2's Primary Aspiration
+                                <select id="primary2" size="1">
+                                    <option value="Family">Family</option>
+                                    <option value="Fortune">Fortune</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Pleasure">Pleasure</option>
+                                    <option value="Popularity">Popularity</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Grilled Cheese">Grilled Cheese</option>
+                                </select>
+                            <p>Parent 2's Secondary Aspiration
+                                <select id="secondary2" size="1">
+                                    <option value="Family">Family</option>
+                                    <option value="Fortune" selected="selected">Fortune</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Pleasure">Pleasure</option>
+                                    <option value="Popularity">Popularity</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Grilled Cheese">Grilled Cheese</option>
+                                </select>
+                            </p>
+                        </div>
+                    </p>
+                    <p class="person-para">Please input however many points for each personality you have.
+                        <p>Sloppy/Neat
+                            <select id="sloppy-neat" size="1" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5" selected="selected">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                        <p>Shy/Outgoing
+                            <select id="shy-outgoing" size="1" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5" selected="selected">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                        <p>Lazy/Active
+                            <select id="lazy-active" size="1" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5" selected="selected">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                        <p>Serious/Playful
+                            <select id="serious-playful" size="1" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5" selected="selected">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                        <p>Grouchy/Nice
+                            <select id="grouchy-nice" size="1" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5" selected="selected">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                    </p>
+                    <p>Zodiac Sign: 
+                        <select id="zodiac" size="1" required>
+                            <option id="zod-fam" value="default">Aquarius</option>
+                            <option id="zod-rom">Aries</option>
+                            <option id="zod-fam">Cancer</option>
+                            <option id="zod-plea">Capricorn</option>
+                            <option id="zod-pop">Gemini</option>
+                            <option id="zod-pop">Leo</option>
+                            <option id="zod-rom">Libra</option>
+                            <option id="zod-know">Pisces</option>
+                            <option id="zod-for">Sagittarius</option>
+                            <option id="zod-for">Scorpio</option>
+                            <option id="zod-plea">Taurus</option>
+                            <option id="zod-know">Virgo</option>
+                        </select>
+                    </p>
+                    <p class="interest-para">Please input your Sim's highest ranked Interest, their second-highest ranked Interest, and their lowest ranked Interest. If there's a tie, then feel free to choose whichever Interest you feel like is more important (or less important in the case of the least) to choose for each respective slot.
+                        <p>Highest Ranked Interest:
+                            <select id="high_inter" size="1" required>
+                                <option id="inter_plea" value="default">Animals</option>
+                                <option id="inter_for">Crime</option>
+                                <option id="inter_rom">Culture</option>
+                                <option id="inter_plea">Entertainment</option>
+                                <option id="inter_fam">Environment</option>
+                                <option id="inter_rom">Fashion</option>
+                                <option id="inter_plea">Food</option>
+                                <option id="inter_fam">Health</option>
+                                <option id="inter_for">Money</option>
+                                <option id="inter_know">Paranormal</option>
+                                <option id="inter_pop">Politics</option>
+                                <option id="inter_know">School</option>
+                                <option id="inter_know">Sci-fi</option>
+                                <option id="inter_pop">Sports</option>
+                                <option id="inter_fam">Toys</option>
+                                <option id="inter_pop">Travel</option>
+                                <option id="inter_rom">Weather</option>
+                                <option id="inter_for">Work</option>
+                            </select>
+                        </p>
+                        <p>Second-Highest Ranked Interest:
+                            <select id="sec_high_inter" size="1" required>
+                                <option id="inter_plea">Animals</option>
+                                <option id="inter_for" value="default">Crime</option>
+                                <option id="inter_rom">Culture</option>
+                                <option id="inter_plea">Entertainment</option>
+                                <option id="inter_fam">Environment</option>
+                                <option id="inter_rom">Fashion</option>
+                                <option id="inter_plea">Food</option>
+                                <option id="inter_fam">Health</option>
+                                <option id="inter_for">Money</option>
+                                <option id="inter_know">Paranormal</option>
+                                <option id="inter_pop">Politics</option>
+                                <option id="inter_know">School</option>
+                                <option id="inter_know">Sci-fi</option>
+                                <option id="inter_pop">Sports</option>
+                                <option id="inter_fam">Toys</option>
+                                <option id="inter_pop">Travel</option>
+                                <option id="inter_rom">Weather</option>
+                                <option id="inter_for">Work</option>
+                            </select>
+                        </p>
+                        <p>Lowest Ranked Interest:
+                            <select id="low_inter" size="1" required>
+                                <option id="inter_plea">Animals</option>
+                                <option id="inter_for">Crime</option>
+                                <option id="inter_rom" value="default">Culture</option>
+                                <option id="inter_plea">Entertainment</option>
+                                <option id="inter_fam">Environment</option>
+                                <option id="inter_rom">Fashion</option>
+                                <option id="inter_plea">Food</option>
+                                <option id="inter_fam">Health</option>
+                                <option id="inter_for">Money</option>
+                                <option id="inter_know">Paranormal</option>
+                                <option id="inter_pop">Politics</option>
+                                <option id="inter_know">School</option>
+                                <option id="inter_know">Sci-fi</option>
+                                <option id="inter_pop">Sports</option>
+                                <option id="inter_fam">Toys</option>
+                                <option id="inter_pop">Travel</option>
+                                <option id="inter_rom">Weather</option>
+                                <option id="inter_for">Work</option>
+                            </select>
+                        </p>
+                    </p>
+                </div>
+                <div class="buttons">
+                    <button id="calculate-button" onclick="calculator()">Calculate</button>
+                    <button id="clear-button" onclick="clearEverything()" class="clear">Reset</button>
+                </div>
+                <div id="results" class="results">
+                    <h3>Here are your results:</h3>
+                    <div class="results-area">
+                        <div id="primary-aspir" class="primary-aspir"></div>
+                        <div id="secondary-aspir" class="secondary-aspir"></div>
+                        <div id="jealousy-level" class="jealousy-level"></div>
+                        <div id="aspiration-results" class="aspiration-results">
+                            <p>Here are the full calculations of your results in case you're curious:</p>
+                            <ul id="aspiration-list" class="aspiration-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="aspir-calculator.js"></script>
+    </body>
+</html>
